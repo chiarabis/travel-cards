@@ -1,5 +1,8 @@
-# Travel cards
-This a blog-style website where you can add and search travel cards with general informations.
--
-Questo è un esercizio per praticare React: in questa app è possibile aggiungere cards e filtrare quelle già inserite di default.
-Next step: salvare le card aggiunte in un server locale e aggiungere un tasto reset al form.
+# React + Vite
+
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+
+Currently, two official plugins are available:
+
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

@@ -1,0 +1,50 @@
+form{
+    @apply
+        flex
+        flex-col
+        gap-3
+        w-80
+        bg-zinc-900
+        m-10
+        p-5
+        rounded-lg
+}
+.form-div{
+    @apply
+        flex flex-col
+}
+.form-div input, .form-div textarea{
+    @apply
+        text-slate-700
+        px-1
+}
+/*.image-div input{
+    @apply
+        text-slate-50
+        p-0
+}*/
+.checkbox-div{
+    @apply
+        flex flex-row 
+}
+.checkbox-div input{
+    @apply
+        ml-2
+        accent-slate-500
+}
+.form-submit {
+    @apply
+      rounded-lg
+      border
+      border-transparent
+      py-4
+      px-6
+      font-medium
+      bg-slate-700
+      cursor-pointer
+      transition-colors duration-75
+  }
+  .form-submit:hover {
+    @apply
+      border-slate-50
+  }

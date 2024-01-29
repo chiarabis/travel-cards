@@ -1,0 +1,38 @@
+.card{
+    @apply
+        rounded-md
+        bg-zinc-900
+        h-auto
+        mx-6
+        my-4
+}
+.card img{
+    @apply
+        rounded-t-md
+        object-cover
+        w-full
+        h-72
+}
+.card-text{
+    @apply
+        flex
+        flex-col
+        p-5
+        gap-2
+        text-center
+}
+.card-text h3{
+    @apply
+        text-xl
+}
+.card-text h4{
+    @apply
+        text-sm
+}
+.card-text p{
+    @apply
+        text-zinc-500
+        truncate
+        text-sm
+        opacity-50
+}

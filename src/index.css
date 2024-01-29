@@ -1,0 +1,44 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Altri stili personalizzati possono essere aggiunti qui */
+
+:root {
+  @apply
+    font-sans
+    leading-6
+    font-normal
+    bg-zinc-800
+    text-slate-50
+}
+
+#root{
+  @apply
+    w-full
+}
+
+body {
+  @apply
+    m-0
+    flex
+    min-h-screen
+    box-content
+}
+
+h1 {
+  @apply
+    text-5xl
+    leading-4
+}
+.card-form{
+  @apply
+    flex
+    flex-col
+    items-center
+    mt-5
+}
+.cards-grid{
+  @apply
+    grid grid-cols-4 gap-px p-3
+}
