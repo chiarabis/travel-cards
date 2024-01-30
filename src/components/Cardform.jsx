@@ -13,16 +13,21 @@ function Cardform({ addCard }){
     
     const handleInputChange = (e) => {
         const { name, value, type, checked } = e.target;
-        const capitalizedValue = value
-            .toLowerCase()
-            .split(' ')
-            .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-            .join(' ');
+        
+        const capitalizeFirstWord = (phrase) => {
+            const words = phrase.split(' ');
+            if (words.length > 0) {
+              words[0] = words[0].charAt(0).toUpperCase() + words[0].slice(1);
+            }
+            return words.join(' ');
+            };
 
+        const formattedValue =
+          name === 'description' ? capitalizeFirstWord(value) : value;
+        
         setFormData((prevData) => ({
             ...prevData,
-            [name]: type === 'checkbox' ? checked : value,
-            [name] : capitalizedValue,
+            [name]: type === 'checkbox' ? checked : formattedValue,
         }))
     }
     
@@ -40,11 +45,23 @@ function Cardform({ addCard }){
             src: '',
             isVisited: false
         })
+        console.log(formData)
+
         } else {
             alert('Complete all fields')
         }
     }
 
+    const handleReset = () => {
+        setFormData({
+            id: Math.random(),
+            location: '',
+            country: '',
+            description: '',
+            src: '',
+            isVisited: false
+        });
+    }
     
     return (
         <form onSubmit={handleSubmit}>
@@ -70,7 +87,8 @@ function Cardform({ addCard }){
                 <input type='checkbox' name='isVisited' checked={formData.isVisited} onChange={handleInputChange}></input>
             </div>
 
-            <button className='form-submit' type='submit'>Add card</button>
+            <button className='button-submit' type='submit'>Add card</button>
+            <button className='button-reset' type='button' onClick={handleReset}>Reset</button>
         </form>
     )
 }
