@@ -5,47 +5,16 @@ import { data } from './data.js'
 import Cardform from './components/Cardform.jsx'
 
 function App() {
-  /*const cardItem = data.map(item => {
-    return (
-      <Card
-        key={item.id}
-        location={item.location}
-        country={item.country}
-        description={item.description}
-        src={item.src}
-        isVisited={item.isVisited}
-      />
-    )
-  })*/
-
   const [cards, setCards] = useState(data);
+  const [filteredCards, setFilteredCards] = useState(data);
 
   function handleAddCard(newCard){
     setCards([...cards, newCard])
+    setFilteredCards([...filteredCards, newCard])
   }
 
-  /*const cardItem = cards.map((card, index) => {
-    <Card
-      key={index} {...card} />
-  })*/
-
-  const cardItem = cards.map(item => {
-    return (
-      <Card
-        key={item.id}
-        location={item.location}
-        country={item.country}
-        description={item.description}
-        src={item.src}
-        isVisited={item.isVisited}
-      />
-    )
-  })
-
-  const [filteredCards, setFilteredCards] = useState(data);
-
-  const handleSearch = (searchCard) => {
-    const filtered = data.filter(
+  function handleSearch(searchCard){
+    const filtered = cards.filter(
       (card) => 
       card.country.toLowerCase().includes(searchCard.toLowerCase()) || card.location.toLowerCase().includes(searchCard.toLowerCase())
         
@@ -61,13 +30,12 @@ function App() {
         <Cardform addCard={handleAddCard}/>
       </div>
 
-      {/*<div className='cards-grid'>{cardItem}</div>*/}
       <div className='cards-grid'>{filteredCards.map((card) => (
           <Card key={card.id} {...card} />
         ))}
-        </div>
+      </div>
     </>
   )
 }
 
-export default App
+export default App;
