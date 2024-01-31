@@ -32,7 +32,7 @@ form{
         ml-2
         accent-slate-500
 }
-.form-submit {
+.button-submit {
     @apply
       rounded-lg
       border
@@ -40,11 +40,35 @@ form{
       py-4
       px-6
       font-medium
-      bg-slate-700
       cursor-pointer
-      transition-colors duration-75
-  }
-  .form-submit:hover {
+}
+.button-submit:hover {
     @apply
       border-slate-50
-  }
+}
+.button-submit:focus{
+    @apply
+        border-slate-500
+        bg-slate-500
+}
+.button-reset{
+    @apply
+        rounded-lg
+        border
+        border-transparent
+        text-red-600
+        font-medium
+        w-1/2
+        m-auto
+        uppercase
+        cursor-pointer
+}
+.button-reset:hover{
+    @apply
+        border-red-500
+}
+.button-reset:focus{
+    @apply
+        bg-red-500
+        text-slate-50
+}

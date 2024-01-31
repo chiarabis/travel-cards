@@ -5,8 +5,10 @@
         h-auto
         mx-6
         my-4
+        relative
+        text-center
 }
-.card img{
+.card-image{
     @apply
         rounded-t-md
         object-cover
@@ -24,10 +26,12 @@
 .card-text h3{
     @apply
         text-xl
+        capitalize
 }
 .card-text h4{
     @apply
         text-sm
+        capitalize
 }
 .card-text p{
     @apply
@@ -36,3 +40,26 @@
         text-sm
         opacity-50
 }
+.close-button{
+    @apply
+        absolute
+        top-[30%]
+        left-[50%]
+        m-[-10px]
+        opacity-0
+}
+.close-button:hover{
+    @apply
+        scale-150
+}
+.close-icon{
+    @apply
+        size-6
+        bg-slate-50
+        rounded-xl
+        p-1
+}
+.hover\:close-button-visible:hover .close-button {
+    opacity: 1;
+}
+  
