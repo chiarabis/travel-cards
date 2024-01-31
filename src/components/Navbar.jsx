@@ -4,7 +4,7 @@ import '../css/navbar.css'
 import pinLogo from '../assets/pin.png'
 import searchIcon from '../assets/icons8-search-30.png'
 
-export default function Navbar({ onSearch}){
+export default function Navbar({ onSearch }){
     const [searchCard, setSearchCard] = useState('');
 
     const handleSearch = () => {
@@ -15,7 +15,7 @@ export default function Navbar({ onSearch}){
         <nav>
             <div className='title'>
                 <img className='pin-logo' alt='logo' src={pinLogo}></img>
-                <h2>Scopri la tua prossima destinazione</h2>
+                <h2>Scopri la tua prossima destinazione</h2>    
             </div>
             <div className='search-bar'>
                 <input type='text' placeholder='Search...' value={searchCard} onChange={(e) => setSearchCard(e.target.value)}></input>
