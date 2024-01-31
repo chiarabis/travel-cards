@@ -22,6 +22,12 @@ function App() {
     setFilteredCards(filtered);
   }
 
+  function handleDeleteCard(cardId){
+    const updatedCards = cards.filter(card => card.id !== cardId);
+    setCards(updatedCards);
+    setFilteredCards(updatedCards);
+  }
+
   return (
     <>
       <Navbar cards={data} onSearch={handleSearch}/>
@@ -31,7 +37,7 @@ function App() {
       </div>
 
       <div className='cards-grid'>{filteredCards.map((card) => (
-          <Card key={card.id} {...card} />
+          <Card key={card.id} {...card} onDelete={handleDeleteCard} />
         ))}
       </div>
     </>
